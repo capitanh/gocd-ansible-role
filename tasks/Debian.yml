@@ -1,0 +1,36 @@
+---
+#- name: Install ca-certificates first to avoid ssl errors
+#  apt:
+#    name: ca-certificates
+#    state: present
+
+- name: Add gocd debian repo
+  apt_repository:
+    repo: deb https://download.gocd.org /
+    state: present
+    filename: gocd
+    validate_certs: no
+
+- name: Add openjdk ppa repo
+  apt_repository:
+    repo: ppa:openjdk-r/ppa
+
+- name: Copy gpg key file
+  copy:
+    src: GOCD-GPG-KEY.asc
+    dest: /tmp
+
+- name: Add gcd repo gpg key
+  apt_key:
+    file: /tmp/GOCD-GPG-KEY.asc
+    state: present
+
+- name: Install go.cd and required packages
+  apt:
+    name: "{{item}}"
+    state: present
+    update_cache: yes
+  with_items:
+    - openjdk-8-jre
+    - git
+    - go-server

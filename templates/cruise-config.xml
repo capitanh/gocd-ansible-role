@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cruise xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cruise-config.xsd" schemaVersion="97">
+  <server artifactsdir="artifacts" agentAutoRegisterKey="21b14fd1-1050-4f07-a8f3-7df724cb0d6c" webhookSecret="3c5c8cca-3758-4586-8b1b-260fb358a7cb" commandRepositoryLocation="default" serverId="be3e58c5-6794-4aa0-9ff6-70e89b78a474" />
+  <pipelines group="{{go_pipelines_group}}" />
+  <environments>
+    <environment name="{{go_environment}}">
+      <agents>
+        <physical uuid="6d0b10f3-f28f-4069-8994-ab1923eaf1a2" />
+      </agents>
+    </environment>
+  </environments>
+  <agents>
+    <agent hostname="integration.golili.net" ipaddress="10.0.2.15" uuid="6d0b10f3-f28f-4069-8994-ab1923eaf1a2" />
+  </agents>
+</cruise>

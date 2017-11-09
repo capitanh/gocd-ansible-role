@@ -1,0 +1,6 @@
+---
+# handlers file for gocd
+- name: Start go.cd service
+  service:
+    name: go-server
+    state: started

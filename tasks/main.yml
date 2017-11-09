@@ -1,0 +1,19 @@
+---
+- include_tasks: "{{ansible_os_family}}.yml"
+
+- name: Copy main server config.xml file
+  template:
+    src: cruise-config.xml
+    dest: /etc/go
+    mode: 0664
+    owner: go
+    group: go
+
+- name: Copy defaults config file
+  template:
+    src: go-server-defaults
+    dest: /etc/default/go-server
+    owner: root
+    group: go
+    mode: 0640
+  notify: Start go.cd service

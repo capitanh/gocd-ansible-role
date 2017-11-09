@@ -1,0 +1,5 @@
+---
+# defaults file for gocd
+go_server_port: 8153  # Default http port
+go_server_ssl:  8154  # Default ssl listen port for agents
+
