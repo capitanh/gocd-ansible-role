@@ -6,7 +6,7 @@ This role install go.cd Continous Delivery Server
 Requirements
 ------------
 
-This role requires ansible 2.4.0.0 or higher, and Oracle JDK 8. You can find a role to install it at https://github.com/capitanh/oraclejdk-ansible-role. platform requirements are listed
+This role requires ansible 2.4.0.0 or higher, platform requirements are listed
 in the metadata file.
 
 Role Variables
