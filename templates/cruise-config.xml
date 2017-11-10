@@ -18,7 +18,10 @@
           </property>
           <property>
             <key>Password</key>
+            <!--
             <encryptedValue>zX4k7Hlxb3s=</encryptedValue>
+            -->
+            <value>secret</value>
           </property>
           <property>
             <key>UserSearchFilter</key>
