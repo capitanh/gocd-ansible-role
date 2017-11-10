@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <cruise xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cruise-config.xsd" schemaVersion="97">
-  <server artifactsdir="artifacts" agentAutoRegisterKey="21b14fd1-1050-4f07-a8f3-7df724cb0d6c" webhookSecret="3c5c8cca-3758-4586-8b1b-260fb358a7cb" commandRepositoryLocation="default" serverId="be3e58c5-6794-4aa0-9ff6-70e89b78a474" />
+  <server artifactsdir="artifacts" agentAutoRegisterKey="21b14fd1-1050-4f07-a8f3-7df724cb0d6c" webhookSecret="3c5c8cca-3758-4586-8b1b-260fb358a7cb" commandRepositoryLocation="default" serverId="be3e58c5-6794-4aa0-9ff6-70e89b78a474">
+    <security>
+      <authConfigs>
+        <authConfig id="LocalLDAP" pluginId="cd.go.authentication.ldap">
+          <property>
+            <key>Url</key>
+            <value>ldap://localhost:389</value>
+          </property>
+          <property>
+            <key>SearchBases</key>
+            <value>ou=people,dc=golili,dc=net</value>
+          </property>
+          <property>
+            <key>ManagerDN</key>
+            <value>cn=admin,dc=golili,dc=net</value>
+          </property>
+          <property>
+            <key>Password</key>
+            <encryptedValue>zX4k7Hlxb3s=</encryptedValue>
+          </property>
+          <property>
+            <key>UserSearchFilter</key>
+            <value />
+          </property>
+          <property>
+            <key>UserLoginFilter</key>
+            <value>(uid={0})</value>
+          </property>
+          <property>
+            <key>DisplayNameAttribute</key>
+            <value>cn</value>
+          </property>
+          <property>
+            <key>EmailAttribute</key>
+            <value>mail</value>
+          </property>
+        </authConfig>
+      </authConfigs>
+    </security>
+  </server>  
   <pipelines group="{{go_pipelines_group}}" />
   <environments>
     <environment name="{{go_environment}}">
