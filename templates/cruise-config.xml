@@ -10,17 +10,14 @@
           </property>
           <property>
             <key>SearchBases</key>
-            <value>ou=people,dc=golili,dc=net</value>
+            <value>ou=people,{{ldap_basedn}}</value>
           </property>
           <property>
             <key>ManagerDN</key>
-            <value>cn=admin,dc=golili,dc=net</value>
+            <value>cn=admin,{{ldap_basedn}}</value>
           </property>
           <property>
             <key>Password</key>
-            <!--
-            <encryptedValue>zX4k7Hlxb3s=</encryptedValue>
-            -->
             <value>secret</value>
           </property>
           <property>
@@ -41,8 +38,17 @@
           </property>
         </authConfig>
       </authConfigs>
+      <roles>
+        <role name="Developer">
+          <users>
+          </users>
+        </role>
+      </roles>
+      <admins>
+        <user>admin</user>
+      </admins>
     </security>
-  </server>  
+  </server>
   <pipelines group="{{go_pipelines_group}}" />
   <environments>
     <environment name="{{go_environment}}">
