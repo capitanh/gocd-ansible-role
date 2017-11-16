@@ -53,11 +53,9 @@
   <environments>
     <environment name="{{go_environment}}">
       <agents>
-        <physical uuid="6d0b10f3-f28f-4069-8994-ab1923eaf1a2" />
       </agents>
     </environment>
   </environments>
   <agents>
-    <agent hostname="integration.golili.net" ipaddress="10.0.2.15" uuid="6d0b10f3-f28f-4069-8994-ab1923eaf1a2" />
   </agents>
 </cruise>
