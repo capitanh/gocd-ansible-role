@@ -12,5 +12,6 @@
     state: present
     disable_gpg_check: yes
   with_items:
+    - java-1.8.0-openjdk
     - git
     - go-server
