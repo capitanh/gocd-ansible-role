@@ -16,8 +16,9 @@
     owner: root
     group: go
     mode: 0640
+  notify: Start go.cd service
 
-- name: Force go-server start
-  service:
-    name: go-server
-    state: started
+#- name: Force go-server start
+#  service:
+#    name: go-server
+#    state: started
