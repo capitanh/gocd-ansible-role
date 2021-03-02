@@ -6,8 +6,9 @@
 
 - name: Add gocd debian repo
   apt_repository:
-    repo: "deb https://download.gocd.org /"
+    repo: deb https://download.gocd.org /
     state: present
+    update_cache: no
     #filename: gocd
     validate_certs: no
 
