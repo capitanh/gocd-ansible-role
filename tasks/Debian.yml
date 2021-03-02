@@ -6,7 +6,7 @@
 
 - name: Add gocd debian repo
   apt_repository:
-    repo: deb https://download.gocd.org /
+    repo: "deb https://download.gocd.org /"
     state: present
     #filename: gocd
     validate_certs: no
@@ -14,6 +14,7 @@
 - name: Add openjdk ppa repo
   apt_repository:
     repo: ppa:openjdk-r/ppa
+    state: present
 
 - name: Copy gpg key file
   copy:
